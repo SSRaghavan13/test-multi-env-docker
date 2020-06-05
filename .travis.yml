@@ -11,8 +11,11 @@ branches:
     only:
         - master
 
-import:
-    source: .travis/push.yml
-    if: type = push
-    source: .travis/pull.yml
-    if: type = pull
+script:
+    - docker-compose run app sh -c "python manage.py test && flake8"
+
+# import:
+#     source: .travis/push.yml
+#     if: type = push
+#     source: .travis/pull.yml
+#     if: type = pull

@@ -10,3 +10,8 @@ services:
             - ./app:/app
         command: >
             sh -c "python manage.py runserver 0.0.0.0:8000"
+        environment: 
+            - DB_HOST=database-test.chvha8zccyh4.us-east-2.rds.amazonaws.com
+            - DB_NAME=database-test
+            - DB_USER=postgres
+            - DB_PASS=postgres

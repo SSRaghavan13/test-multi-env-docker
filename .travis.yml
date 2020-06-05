@@ -12,7 +12,7 @@ branches:
         - master
 
 import:
-    - source: .travis/push.yml
+    source: .travis/push.yml
     if: type = push
-    - source: .travis/pull.yml
+    source: .travis/pull.yml
     if: type = pull

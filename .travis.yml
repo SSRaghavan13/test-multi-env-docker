@@ -12,9 +12,10 @@ jobs:
         if: (type = pull AND branch = master)
         script:
             - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
+            - docker push ssraghavan13/recipe-app-api
         if: (type = push AND branch = master)
         script:
-            - docker push ssraghavan13/recipe-app-api
+            - echo working
 # script:
 #     - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
 

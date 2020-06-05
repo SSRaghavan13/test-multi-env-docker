@@ -9,13 +9,13 @@ before_script: pip install docker-compose
 
 jobs:
     include:
+        if: (type = push AND branch = master)
+        script:
+            - echo working
         if: (type = pull AND branch = master)
         script:
             - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
             - docker push ssraghavan13/recipe-app-api
-        if: (type = push AND branch = master)
-        script:
-            - echo working
 # script:
 #     - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
 

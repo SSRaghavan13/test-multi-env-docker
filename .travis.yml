@@ -1,5 +1,5 @@
 import:
-    - source: .push.yml
-    if: type = push
-    - source: .pull.yml
-    if: type = pull
+    - source: ./push.yml
+    # if: type = push
+    # - source: .pull.yml
+    # if: type = pull

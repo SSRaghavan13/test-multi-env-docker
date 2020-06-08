@@ -7,9 +7,9 @@ services:
 
 before_script: pip install docker-compose
 
-branches:
-    only:
-        - master
+# branches:
+#     only:
+#         - master
 
 script:
     echo working

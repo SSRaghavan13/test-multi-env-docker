@@ -1,5 +1,11 @@
 import:
     - source: ./push.yml
-    # if: type = push
+        if: type = push
     # - source: .pull.yml
     # if: type = pull
+
+# import:
+#     - source: .travis/master.yml
+#         if: branch = master
+#     - source: .travis/other.yml
+#         if: branch != master

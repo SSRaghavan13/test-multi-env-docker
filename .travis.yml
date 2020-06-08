@@ -1,7 +1,7 @@
 import:
     - source: ./push.yml
       if: type = push
-    - source: .pull.yml
+    - source: ./pull.yml
       if: type = pull_request
 
 # import:

@@ -1,11 +1,11 @@
-# import:
-#     - source: ./push.yml
-#         if: type = push
-#     # - source: .pull.yml
-#     # if: type = pull_request
-
 import:
-    - source: ./master.yml
-      if: branch = master
-    - source: ./other.yml
-      if: branch != master
+    - source: ./push.yml
+      if: type = push
+    # - source: .pull.yml
+    # if: type = pull_request
+
+# import:
+#     - source: ./master.yml
+#       if: branch = master
+#     - source: ./other.yml
+#       if: branch != master

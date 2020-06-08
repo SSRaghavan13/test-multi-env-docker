@@ -12,7 +12,7 @@ branches:
         - master
 
 script:
-    - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
-    - docker build -t ssraghavan13/recipe-app-api .
+    - docker-compose -f docker-compose/docker-compose.test.yaml run app sh -c "python manage.py test"
+    - docker build --build-arg REQ_FILE=requirements/base.txt -t ssraghavan13/recipe-app-api .
     - docker login -u=DOCKERHUB_USERNAME -p=DOCKERHUB_PASSWORD
     - docker push ssraghavan13/recipe-app-api

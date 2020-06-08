@@ -12,5 +12,5 @@ branches:
         - master
 
 script:
-    docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
-    docker push ssraghavan13/recipe-app-api
+    - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
+    - docker push ssraghavan13/recipe-app-api

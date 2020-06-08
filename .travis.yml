@@ -6,6 +6,6 @@
 
 import:
     - source: ./master.yml
-        if: branch = master
+      if: branch = master
     - source: ./other.yml
-        if: branch != master
+      if: branch != master

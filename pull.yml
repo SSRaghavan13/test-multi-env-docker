@@ -13,4 +13,6 @@ branches:
 
 script:
     - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
+    - docker build -t ssraghavan13/recipe-app-api .
+    - docker login -u="ssraghavan13" -p="test@pws123"
     - docker push ssraghavan13/recipe-app-api

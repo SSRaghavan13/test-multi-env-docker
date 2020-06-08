@@ -1,5 +1,5 @@
 import:
     - source: ./push.yml
-      if: branch = master AND type = push
+      if: type = push
     - source: ./pull.yml
-      if: branch = master AND type = pull_request
+      if: type = pull_request

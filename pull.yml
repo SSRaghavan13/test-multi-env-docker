@@ -11,4 +11,6 @@ branches:
     only:
         - master
 
-script: bash pull_script.sh
+deploy:
+    provider: script
+    script: bash pull_script.sh

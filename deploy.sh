@@ -1,3 +1,4 @@
+sudo: required
 # install AWS SDK
 pip install --user awscli
 export PATH=$PATH:$HOME/.local/bin
@@ -25,4 +26,4 @@ docker tag ssraghavan13/recipe-app-api:latest 266509442025.dkr.ecr.us-east-2.ama
 docker push 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest
 
 # update an AWS ECS service with the new image
-ecs-deploy -c recipe-cluster -n recipe-service -i 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest:latest
+ecs-deploy -c recipe-cluster -n recipe-service -i 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest

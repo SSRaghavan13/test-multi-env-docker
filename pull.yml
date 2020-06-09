@@ -11,8 +11,4 @@ branches:
     only:
         - master
 
-script:
-    - docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
-    - docker build -t ssraghavan13/recipe-app-api .
-    - docker login -u=${DOCKERHUB_USERNAME} -p=${DOCKERHUB_PASSWORD}
-    - docker push ssraghavan13/recipe-app-api:latest
+script: bash pull_script.sh

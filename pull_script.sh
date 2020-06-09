@@ -25,7 +25,6 @@ sudo chmod +x /usr/bin/ecs-deploy
 
 eval $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
 
-
 docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
 docker build -t ssraghavan13/recipe-app-api .
 docker login -u=${DOCKERHUB_USERNAME} -p=${DOCKERHUB_PASSWORD}

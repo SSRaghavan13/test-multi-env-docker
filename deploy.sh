@@ -16,12 +16,13 @@ sudo chmod +x /usr/bin/ecs-deploy
 eval $(aws ecr get-login --region us-east-2)
 
 # or login DockerHub
-# docker login --username $DOCKER_HUB_USER --password $DOCKER_HUB_PSW
+docker login -u=${DOCKERHUB_USERNAME} -p=${DOCKERHUB_PASSWORD}
+
+docker pull ssraghavan13/recipe-app-api:latest
 
 # build the docker image and push to an image repository
-docker build -t auto-deploy-aws .
-docker tag auto-deploy:latest 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest:latest
-docker push 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest:latest
+docker tag ssraghavan13/recipe-app-api:latest 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest
+docker push 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest
 
 # update an AWS ECS service with the new image
 ecs-deploy -c recipe-cluster -n recipe-service -i 266509442025.dkr.ecr.us-east-2.amazonaws.com/recipe-app-aws:latest:latest

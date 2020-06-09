@@ -1,5 +1,5 @@
 sudo: required
-pip install --user awscli
+pip install awscli
 export PATH=$PATH:$HOME/.local/bin
 
 add-apt-repository ppa:eugenesan/ppa

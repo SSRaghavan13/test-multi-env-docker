@@ -19,3 +19,8 @@ RUN adduser -D user
 # RUN chown -R user:user /vol/
 # RUN chmod -R 755 /vol/web
 USER user
+
+ENV SECRET_KEY=ck^73-xg)-c!w2=$ter%k$chbn1#%%lb++v-10_unp0fqbpx*o
+ENV DEBUG=True
+
+CMD python manage.py runserver 0.0.0.0:8000

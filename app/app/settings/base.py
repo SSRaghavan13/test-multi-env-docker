@@ -25,7 +25,7 @@ DEBUG = os.environ.get('DEBUG')
 # SECRET_KEY = 'ck^73-xg)-c!w2=$ter%k$chbn1#%%lb++v-10_unp0fqbpx*o'
 # DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

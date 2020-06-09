@@ -11,8 +11,5 @@ branches:
     only:
         - master
 
-deploy:
-    provider: script
-    access_key_id: ${AWS_ACCESS_KEY_ID}
-    secret_access_key: ${AWS_SECRET_ACCESS_KEY}
-    script: bash pull_script.sh
+after-success:
+    - pull_script.sh

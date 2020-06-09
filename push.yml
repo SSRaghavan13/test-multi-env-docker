@@ -11,11 +11,4 @@ branches:
     only:
         - master
 
-deploy:
-    on:
-        branch: master
-    provider: script
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-
-after_deploy: bash deploy.sh
+script: bash deploy.sh

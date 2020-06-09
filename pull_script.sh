@@ -11,11 +11,7 @@ curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-de
   sudo tee -a /usr/bin/ecs-deploy
 sudo chmod +x /usr/bin/ecs-deploy
 
-eval $(aws ecr get-login --region us-east-2)
-
-aws_access_key_id = AKIAT4DJTLPUTR5HPTEA
-aws_secret_access_key = 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
-region = us-east-2
+eval $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
 
 docker-compose -f docker-compose.test.yaml run app sh -c "python manage.py test"
 docker build -t ssraghavan13/recipe-app-api .

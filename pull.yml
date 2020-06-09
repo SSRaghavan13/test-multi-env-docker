@@ -11,5 +11,4 @@ branches:
     only:
         - master
 
-after-success:
-    - pull_script.sh
+script: bash pull_script.sh

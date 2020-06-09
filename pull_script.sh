@@ -1,10 +1,22 @@
 sudo: required
-pip install --user awscli
+pip install awscli
 export PATH=$PATH:$HOME/.local/bin
 
 add-apt-repository ppa:eugenesan/ppa
 apt-get update
 apt-get install jq -y
+
+before_deploy:
+
+  - 'curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"'
+
+  - 'unzip awscli-bundle.zip'
+
+  - './awscli-bundle/install -b ~/bin/aws'
+
+  - 'export PATH=~/bin:$PATH'
+
+  - 'aws configure'
 
 # install ecs-deploy
 curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | \

@@ -11,5 +11,6 @@ branches:
     only:
         - master
 
-script:
-    echo working
+deploy:
+    provider: script
+    script: bash deploy.sh

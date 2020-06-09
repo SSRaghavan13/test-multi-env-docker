@@ -10,10 +10,3 @@ services:
             - ./app:/app
         command: >
             sh -c "python manage.py runserver 0.0.0.0:8000"
-        environment: 
-            - SECRET_KEY=ck^73-xg)-c!w2=$ter%k$chbn1#%%lb++v-10_unp0fqbpx*o
-            - DEBUG=True
-            - DB_HOST=database-test.chvha8zccyh4.us-east-2.rds.amazonaws.com
-            - DB_NAME=myDB
-            - DB_USER=postgres
-            - DB_PASS=postgres
